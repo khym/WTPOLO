@@ -1,0 +1,144 @@
+
+<ion-view view-title="Map">
+<ion-nav-buttons side="right">
+        <button class="button button-icon button-clear " ng-click="search()" >
+<i id="button_right_tab" class="big-icon ion-levels"></i>
+         </button>
+</ion-nav-buttons>
+
+  <ion-content scroll="false" > 
+
+
+  <div class="mapWrap">
+ <ng-map center="{{address}}" zoom="16">
+
+<custom-control id="home" position="RIGHT_TOP" index="1" >
+            <div id="custom_map" ng-click="centerOnMe()" style="width: 36px; margin-bottom: 0px; height: 36px;"></div>
+<!--             <div id="custom_map_nobg" ng-click="fake_centerOnMe()" style="width: 34px; margin-bottom: 0px; height: 34px;">
+               <i class="icon ion-bug" style="
+                  padding: 5%;
+    color: #666666;
+    text-align: center;
+    font-size: 34px;
+"></i>
+            </div> -->
+            <div id="custom_map_nobg" ng-click="doRefresh()" style="width: 34px; margin-bottom: 0px; height: 34px;">
+              <i class="icon ion-refresh" style="
+                  padding: 5%;
+    color: #666666;
+    text-align: center;
+    font-size: 34px;
+"></i>
+            </div>
+          </custom-control> 
+
+<!--     <custom-marker ng-repeat="dor_res in json_res | filterMultiple:{dor_m_type:type.m,
+                                    dor_w_type:type.w,
+                                    dor_all_type:type.a,
+                                    fac_pet:devList[0].checked,
+                                    fac_wifi:devList[1].checked,
+                                    fac_tv:devList[2].checked,
+                                    fac_sm:devList[3].checked,
+                                    fac_fan:devList[4].checked,
+                                    fac_air:devList[5].checked,
+                                    fac_wash:devList[6].checked,
+                                    fac_cctv:devList[7].checked,
+                                    fac_elevator:devList[8].checked,
+                                    fac_fitness:devList[9].checked,
+                                    fac_keycard:devList[10].checked,
+                                    fac_wirenet:devList[11].checked,
+                                    fac_security:devList[12].checked,
+                                    fac_shower:devList[13].checked,
+                                    fac_swimming:devList[14].checked} | 
+                    filter:byRange('dor_prize', priceSlider.min, priceSlider.max)"
+      position="{{dor_res.lat}}, {{dor_res.lng}}" on-click="click(dor_res.dor_id)">
+      <div>
+        {{dor_res.dor_name}}
+      </div>
+      <p id="nopad">{{dor_res.dor_prize}} บาท/เดือน</p>
+    </custom-marker> -->
+
+  <marker position="{{dor_res.lat}}, {{dor_res.lng}}" 
+                  optimized="false"
+                  icon="http://{{url_domain}}/mmarker/maker_marker.php?text={{dor_res.dor_prize}}%20บาท/เดือน&price={{dor_res.dor_name}}"  
+                  on-click="click(dor_res.dor_id)" 
+                  ng-repeat="dor_res in json_res | 
+                    filterMultiple:{dor_m_type:type.m,
+                                    dor_w_type:type.w,
+                                    dor_all_type:type.a,
+                                    fac_pet:devList[0].checked,
+                                    fac_wifi:devList[1].checked,
+                                    fac_tv:devList[2].checked,
+                                    fac_sm:devList[3].checked,
+                                    fac_fan:devList[4].checked,
+                                    fac_air:devList[5].checked,
+                                    fac_wash:devList[6].checked,
+                                    fac_cctv:devList[7].checked,
+                                    fac_elevator:devList[8].checked,
+                                    fac_fitness:devList[9].checked,
+                                    fac_keycard:devList[10].checked,
+                                    fac_wirenet:devList[11].checked,
+                                    fac_security:devList[12].checked,
+                                    fac_shower:devList[13].checked,
+                                    fac_swimming:devList[14].checked} | 
+                    filter:byRange('dor_prize', priceSlider.min, priceSlider.max) " >
+          </marker>
+
+<marker id="u_location" position="{{u_address}}" optimized="false"
+              icon="{
+                  url:'templates/image/User Location-96.png',
+                  scaledSize:[56,56],
+                  origin: [0,0],
+                  anchor: [0,56]
+                }">
+          </marker>
+  </ng-map>
+  </div>
+
+    <!-- <div class="mapWrap"  data-tap-disabled="true">
+      <map class="search" center="{{address}}" zoom="16" > 
+
+          <custom-control id="home" position="RIGHT_BOTTOM" index="1" >
+            <div id="custom_map" ng-click="centerOnMe()" style="width: 36px; margin-bottom: 0px; height: 36px;"></div>
+          </custom-control>                      
+        
+          <marker position="{{dor_res.lat}}, {{dor_res.lng}}" 
+                  optimized="false"
+                  icon="http://{{url_domain}}/mmarker/maker_marker.php?text={{dor_res.dor_prize}}%20บาท/เดือน&price={{dor_res.dor_name}}"  
+                  on-click="click(dor_res.dor_id)" 
+                  ng-repeat="dor_res in json_res | 
+                    filterMultiple:{dor_m_type:type.m,
+                                    dor_w_type:type.w,
+                                    dor_all_type:type.a,
+                                    fac_pet:devList[0].checked,
+                                    fac_wifi:devList[1].checked,
+                                    fac_tv:devList[2].checked,
+                                    fac_sm:devList[3].checked,
+                                    fac_fan:devList[4].checked,
+                                    fac_air:devList[5].checked,
+                                    fac_wash:devList[6].checked,
+                                    fac_cctv:devList[7].checked,
+                                    fac_elevator:devList[8].checked,
+                                    fac_fitness:devList[9].checked,
+                                    fac_keycard:devList[10].checked,
+                                    fac_wirenet:devList[11].checked,
+                                    fac_security:devList[12].checked,
+                                    fac_shower:devList[13].checked,
+                                    fac_swimming:devList[14].checked} | 
+                    filter:byRange('dor_prize', priceSlider.min, priceSlider.max) " >
+          </marker>
+          
+          <marker id="u_location" position="{{u_address}}" optimized="false"
+              icon="{
+                  url:'templates/image/User Location-96.png',
+                  scaledSize:[56,56],
+                  origin: [0,0],
+                  anchor: [0,56]
+                }">
+          </marker>
+
+      </map> 
+    </div> -->
+
+  </ion-content>
+</ion-view>

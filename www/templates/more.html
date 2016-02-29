@@ -1,0 +1,82 @@
+<ion-view view-title="More">
+<ion-nav-buttons side="right">
+        <button  class="button button-icon button-clear " ng-click="logout()" ng-hide="status_login"> 
+        <i id="button_right_tab" class="big-icon ion-log-out"></i> </button>
+</ion-nav-buttons>
+<!--    <nav  mfb-menu position="br"  effect="slidein" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>  --> 
+  <ion-content class="padding">
+    <ion-list>
+
+      <div class="card" ng-show="status_login" ng-form="LoginForm">
+     <div class="list">
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email</span>
+    <input type="email" placeholder="Email" ng-model="user.email" required>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="Password" placeholder="Password" ng-model="user.pwd" required>
+  </label>
+</div>
+          <div class="padding">
+            <button class="button button-block button-positive" ng-click="submit_login(user)" ng-disabled="LoginForm.$invalid">
+              Sign-In
+            </button>
+            <button class="button button-block button-light" ng-click="openSignUp()" >Sign Up</button>
+                        <p class="text-center">
+              <a  ng-click="open_forget()" >Forgot password</a>
+            </p>
+            </div>
+</div>
+
+
+<div class="card" ng-show="!status_login">
+  <div class="list">
+   <a class="item item-avatar" href="#">
+      <img src="img/ben.png">
+      <h2>Venkman</h2>
+      <p>{{email}}</p>
+    </a>
+
+  </div>
+</div>
+
+<!-- <div class="card" ng-show="value_status">
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ios-person my-icon"></i>Profile</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon fa fa-building my-icon"></i>Management</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon ">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+</div> -->
+
+<!--   <i class="fa fa-camera-retro fa-lg"></i> fa-lg
+<i class="fa fa-camera-retro fa-2x"></i> fa-2x
+<i class="fa fa-camera-retro fa-3x"></i> fa-3x
+<i class="fa fa-camera-retro fa-4x"></i> fa-4x
+<i class="fa fa-adjust fa-5x"></i> fa-5x -->
+    </ion-list>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,127 @@
+<ion-modal-view >
+  <ion-header-bar>
+    <h1 class="title title-center">Custom Search</h1>
+    <div class="buttons">
+      <button id="button_modal_r" class="button button-clear"  ng-click="closeLogin()" >Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <form ng-submit="doSearch(data)">
+      <div class="list">
+
+<!--           <label class="item item-input" > 
+                  <input type="text" id="Autocomplete" class="form-control" ng-autocomplete="result1" details="details1" options="options1"/>
+                   
+                   <input type="text" ng-model="greeting" ng-change="change(greeting)" />
+                  
+             
+          </label> -->
+<!--           <label class="item item-input item-floating-label">
+          <span class="input-label">XXX</span>
+          <input places-auto-complete types="['geocode']" on-place-changed="myCallback(place)" />
+          </label> -->
+  <div class="item item-divider">
+    Places
+  </div>
+          <label class="item item-input item-floating-label">
+              <!-- <span class="input-label">Places</span> -->
+              <input type="text" placeholder="Places Name" ng-model="data.place" ng-change="change(data.place)" ng-disabled="data.check" >
+            </label>
+
+          <div class="item-text-wrap" ng-hide="value_hide">
+          
+          <ul class="list">
+              <li class="item item-input label_font" ng-repeat="x in names" ng-click="click_places(x.description)">
+                {{ x.description }}
+              </li>
+          </ul>
+
+          </div>
+
+           <li class="item item-toggle">
+    Use Current Location
+     <label class="toggle toggle-assertive">
+       <input type="checkbox"  
+       ng-change="data.place = data.check ? data.place = 'current-location' : data.test"
+                ng-model="data.check" >
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+                 
+
+ <div class="item item-divider">
+    Price :{{priceSlider.min}} , {{priceSlider.max}}
+  </div>
+
+    <label class="item">
+        
+        
+        <rzslider
+                rz-slider-floor="priceSlider.floor"
+                rz-slider-ceil="priceSlider.ceil"
+                rz-slider-model="priceSlider.min"
+                rz-slider-high="priceSlider.max"
+                rz-slider-step="6"
+                rz-slider-tpl-url="rzSliderTpl.html"></rzslider>
+    </label>
+
+
+
+
+ <div class="item item-divider">
+    Gender
+  </div>
+    <ion-checkbox ng-model="type.m">Male <img class="item-checkbox-img" ng-src="http://{{url_domain}}/pic/Male.png"></ion-checkbox>
+  <ion-checkbox ng-model="type.w">Female <img class="item-checkbox-img" ng-src="http://{{url_domain}}/pic/Female.png"></ion-checkbox>
+  <ion-checkbox ng-model="type.a">Male & Female 
+  <div class=""><img class="item-checkbox-img" ng-src="http://{{url_domain}}/pic/Male.png">
+  <img class="item-checkbox-img2" ng-src="http://{{url_domain}}/pic/Female.png"></div>
+  
+  </ion-checkbox>
+
+
+ <div class="item item-divider">
+    Facility
+  </div>
+        <ion-checkbox ng-repeat="item in devList"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked"
+                      ng-change="pushNotificationChange()" 
+                      
+                      >
+          {{ item.text }}
+          <img class="item-checkbox-img"
+              ng-src="{{item.img}}">
+        </ion-checkbox>
+
+ <label class="item">
+          <button class="button button-block button-positive"  type="submit">Submit</button>
+
+        </label>
+      </div>
+    </form>
+
+   <!--  devList[0].checked
+    devList[1].checked
+    devList[2].checked
+    devList[3].checked
+    devList[4].checked
+    devList[5].checked
+    devList[6].checked
+    devList[7].checked
+    devList[8].checked
+    devList[9].checked
+    devList[10].checked
+    devList[11].checked
+    devList[12].checked
+    devList[13].checked
+    devList[14].checked -->
+
+
+    <!-- <button class="button button-block button-positive" ng-click="test_01()" type="button">sss</button> -->
+    <!-- <button class="button button-block button-positive" ng-click="test_02()" type="button">Reset</button> -->
+  </ion-content>
+</ion-modal-view>

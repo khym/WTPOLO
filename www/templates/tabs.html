@@ -1,0 +1,36 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+    
+<ion-tabs class="tabs-icon-only tabs-color-active-positive ">
+
+  <!-- Dashboard Tab -->
+  <ion-tab icon-off="ion-ios-location-outline" icon-on="ion-ios-location" href="#/tab/dash" animation="nav-title-slide-ios7">
+    <ion-nav-view name="tab-dash"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab  icon-off="ion-ios-bookmarks-outline" icon-on="ion-ios-bookmarks" href="#/tab/bookmark" animation="nav-title-slide-ios7">
+    <ion-nav-view name="tab-bookmark"></ion-nav-view>
+  </ion-tab>
+
+    <!-- Managent Dormitory Tab -->
+  <ion-tab title="Chats" icon-off="ion-ios-albums-outline" icon-on="ion-ios-albums" href="#/tab/manage" hidden="{{GlobalShowTab()}}">
+    <ion-nav-view name="tab-manage"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab  icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/account" animation="nav-title-slide-ios7">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+
+
+  
+<!--   <ion-tab  icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/account" animation="nav-title-slide-ios7">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab> -->
+
+</ion-tabs>
+

@@ -1,0 +1,123 @@
+<ion-view view-title="Account">
+<ion-nav-buttons side="right">
+        <button  class="button button-icon button-clear " ng-click="logout()" ng-show="!status_login"> 
+        <i id="button_right_tab" class="big-icon ion-log-out"></i> </button>
+</ion-nav-buttons>
+<!--    <nav  mfb-menu position="br"  effect="slidein" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>  --> 
+  <ion-content class="padding">
+    <ion-list>
+
+      <div class="card" ng-show="status_login" ng-form="LoginForm">
+     <div class="list">
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email</span>
+    <input type="email" placeholder="Email" ng-model="user.email" required>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="Password" placeholder="Password" ng-model="user.pwd" required>
+  </label>
+</div>
+          <div class="padding">
+            <button class="button button-block button-positive" ng-click="submit_login(user)" ng-disabled="LoginForm.$invalid">
+              Sign-In
+            </button>
+            <button class="button button-block button-light" ng-click="openSignUp()" >Sign Up</button>
+                        <p class="text-center">
+              <a  ng-click="open_forget()" >Forgot password</a>
+            </p>
+            </div>
+</div>
+
+
+<div class="card" ng-show="!status_login">
+  <div class="list">
+   <a class="item item-avatar" href="#">
+      <!-- <i class="icon"></i> -->
+      <img src="img/ben.png">
+      <h2>Venkman</h2>
+      <p>{{email}}</p>
+    </a>
+
+<!--     <div class="item">Ok</div>
+
+     <a class="item item-icon-left" href="#">
+    <i class="icon ion-log-out"></i>
+    Logout
+  </a>
+
+       <a class="item item-icon-right" href="#">
+    <i class="icon ion-log-out"></i>
+    Logout
+  </a>
+
+ <div class="item item-button-right">
+    Logout
+    <button class="button button-positive">
+      <i class="icon ion-log-out"></i>
+    </button>
+  </div> -->
+
+  </div>
+</div>
+
+<!-- <div class="card" ng-show="value_status">
+      <div class="row">
+        <div class="col">
+          <a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>
+          Text
+          </a>
+        </div>
+
+        <div class="col"><a href="" class="button button-icon">
+
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+      <div class="row">
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+        <div class="col"><a href="" class="button button-icon ">
+          <i class="icon ion-ionic my-icon"></i>Text</a></div>
+      </div>
+</div> -->
+
+
+<!-- <div class="card">
+	<div class="item item-input-inset" ng-form="myForm">
+  <button class="button button-clear button-positive" ng-click="submitForm(data)" ng-disabled="myForm.$invalid">
+    Salvar
+  </button>
+  <label class="item item-input">
+    <span class="input-label">Nome</span>
+      <input type="text" placeholder="Nome da categoria" ng-model="data.Categoria.name" required>
+   </label>
+</div>
+</div> -->
+
+
+<!--     <ion-toggle  ng-model="settings.enableFriends">
+        Enable Friends
+    </ion-toggle> -->
+
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>

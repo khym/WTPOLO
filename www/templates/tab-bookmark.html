@@ -1,0 +1,96 @@
+<ion-view view-title="Bookmark & Booking">
+
+  <ion-content class="padding" >
+    <ion-list>
+
+<!-- <div class="card"  ng-show="check_login()"> -->
+<div class="card"  ng-show="false">
+        <div class="item item-divider">
+          Booking
+        </div>
+
+    <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_new '
+      >
+          <img ng-src="{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <!-- <button class="button button-icon icon ion-android-delete" ng-click="remove_booking(dor_res.dor_id)"></button> -->
+        </div>
+
+<!-- <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_res2 '
+      >
+          <img ng-src="http://{{url_domain}}/{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <button class="button button-icon icon ion-android-delete" ng-click="remove_booking(dor_res.dor_id)"></button>
+        </div> -->
+
+    <!--     <div class="item item-icon-right" href="#" ng-repeat='dor_res in json_res2' ng-click="click(dor_res.dor_id)">
+          {{dor_res.dor_name}}
+    <i class="icon ion-android-delete" ng-click="remove_booking(dor_res.dor_id)"></i>
+        </div> -->
+</div>
+<!-- <div ng-repeat='letter in letters | inArray:filterBy:"id"'>{{letter.id}}</div> -->
+<div class="card" ng-hide="check_login()">
+        <div class="item item-divider">
+          Favorite in localstorage
+        </div>
+
+    <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_fav'
+    >
+          <img ng-src="{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <!-- <button class="button button-icon icon ion-android-delete" ng-click="remove(dor_res.dor_id)"></button> -->
+        </div>
+
+<!-- <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_res '
+      >
+          <img ng-src="http://{{url_domain}}/{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <button class="button button-icon icon ion-android-delete" ng-click="remove(dor_res.dor_id)"></button>
+        </div> -->
+
+
+        <!-- <div class="item item-icon-right" href="#" ng-repeat="dor_res in json_res " ng-click="click(dor_res.dor_id)">
+          {{dor_res.dor_name}}
+          <i class="icon ion-android-delete" ng-click="remove(dor_res.dor_id)"></i>
+        </div> -->
+</div>
+<div ng-show="check_login()">
+<div class="card" >
+  <div class="item item-divider">
+          Booking
+        </div>
+        <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_res2 '
+      >
+          <img ng-src="http://{{url_domain}}/{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <!-- <button class="button button-icon icon ion-android-delete" ng-click="remove_booking(dor_res.dor_id)"></button> -->
+        </div>
+
+</div>
+<div class="card" >
+<div class="item item-divider">
+          Favorite
+        </div>
+        <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_res1 '
+      >
+          <img ng-src="http://{{url_domain}}/{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <!-- <button class="button button-icon icon ion-android-delete" ng-click="remove(dor_res.dor_id)"></button> -->
+        </div>
+  
+</div>
+</div>
+    </ion-list>
+  </ion-content>
+</ion-view>

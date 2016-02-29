@@ -1,0 +1,239 @@
+
+
+<ion-scroll >
+      <ion-view hide-nav-bar="false" view-title="Create Dormitory">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+
+  <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios-arrow-back" ng-click="myGoBack() " >
+
+        </button>
+
+ 
+
+</ion-nav-buttons>
+
+
+
+  <ion-content>
+    
+
+  <div class="card"> 
+
+    <div id="mapCanvas"></div>
+  <div id="infoPanel" ng-hide="{{forhide}}">
+    <b>Marker status:</b>
+    <div id="markerStatus"><i>Click and drag the marker.</i></div>
+    <b>Current position:</b>
+    <div id="info" ></div>
+ 
+    <b>Closest matching address:</b>
+    <div id="address"></div>
+  </div>
+
+
+      </div>
+
+  <div class="card">
+    
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">ชื่อหอพัก</span>
+          <input type="text" placeholder="ชื่อหอพัก" ng-model="dor.name_dor">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">ราคาหอพัก</span>
+          <input type="text" placeholder="ราคาหอพัก" ng-model="dor.prize_dor">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">ค่าไฟฟ้า</span>
+          <input type="text" placeholder="ค่าไฟฟ้า" ng-model="dor.prize_e_dor">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">ค่าน้ำประปา</span>
+          <input type="text" placeholder="ค่าน้ำประปา" ng-model="dor.prize_w_dor">
+        </label>
+        
+ <!--        <label class="item item-input item-floating-label">
+          <i class="icon ion-ios-email placeholder-icon"></i>
+          <span class="input-label">Email</span>
+          <input type="text" placeholder="email">
+        </label> -->
+
+        <label class="item item-input item-floating-label">
+          <span class="input-label">ค่ามัดจำ</span>
+          <input type="text" placeholder="ค่ามัดจำ" ng-model="dor.prize_b_dor">
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">
+              ประเภทหอพัก
+            </div>
+             <select name='options' ng-model="dor.gender">
+            <option  value="men">ชาย</option>
+            <option  value="women">หญิง</option>
+            <option  value="all">รวม</option>
+          </select>
+
+
+          </label>
+      </div>
+          <!-- <div class="padding">
+        <button class="button button-block button-positive" type="submit" ng-click="create_dor(dor)">Create Account</button>
+      </div> -->
+  </div>
+<!-- <div class="card">
+
+</div> -->
+
+<div class="card">
+  
+   <ion-slide-box>
+    <ion-slide >
+      <img class="img_slide" ng-src="{{urlimg}}" style="max-width: 100%; height: auto; " />
+    </ion-slide>
+    <ion-slide >
+      <img class="img_slide" ng-src="{{urlimg2}}"  style="max-width: 100%; height: auto; "/>
+    </ion-slide>
+    <ion-slide >
+      <img class="img_slide" ng-src="{{urlimg3}}"  style="max-width: 100%; height: auto; "/>
+    </ion-slide>
+  </ion-slide-box>
+
+ <div class="button-bar">
+  <a class="button button-energized" ng-click="cho_img(70)">First</a>
+  <a class="button button-energized" ng-click="cho_img(72)">Second</a>
+  <a class="button button-energized" ng-click="cho_img(73)">Third</a>
+</div>
+
+</div>
+
+<!-- <div class="card">
+<img ng-src="{{urlimg}}" style="max-width: 100%; height: auto; " />
+       <button class="button button-full button-energized" ng-click="cho_img(70)" >cho_img</button>
+
+</div>
+
+<div class="card">
+<img ng-src="{{urlimg2}}" style="max-width: 100%; height: auto; " />
+       <button class="button button-full button-energized" ng-click="cho_img(72)" >cho_img</button>
+
+</div>
+
+<div class="card">
+<img ng-src="{{urlimg3}}" style="max-width: 100%; height: auto; " />
+       <button class="button button-full button-energized" ng-click="cho_img(73)" >cho_img</button>
+
+</div> -->
+
+<div class="card">
+
+  <div class="list">
+        
+        <ion-checkbox ng-repeat="item in devList"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked"
+                      ng-change="pushNotificationChange()" 
+                      
+                      >
+          {{ item.text }}
+          <img class="item-checkbox-img"
+              src="{{item.img}}">
+        </ion-checkbox>
+
+       <label class="item item-input text">
+          <textarea placeholder="สิ่งอำนวยความสะดวก อื่นๆ" rows="5" ng-model="item.description" ng-Required="true" name="description" lose-focus-on-return></textarea>
+        </label>
+                  
+<!--         <label class="item item-input item-floating-label">
+          <span class="input-label">สิ่งอำนวยความสะดวก อื่นๆ</span>
+          <input type="text" placeholder="กรุณากรอกสิ่งอำนวยความสะดวก อื่นๆ" ng-model="dor.etc">
+        </label>
+ -->
+  </div>
+
+
+
+
+  <!--  <ul class="list">
+
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" ng-model="dor.not_allow" checked="">
+           </label>
+            
+           <i class="icon icon_custom"><img class="custom_icon" src="{{no_sus}}" title="No Animals" width="36">Not allow pet</i>
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" checked="" ng-model="dor.wifi">
+           </label>
+                      <i class="icon icon_custom"><img class="custom_icon" src="{{wifi}}" title="Wi-Fi Logo" width="36">Free Wifi</i>
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" checked="" ng-model="dor.tv">
+           </label>
+            
+           <i class="icon icon_custom"><img class="custom_icon" src="{{tv}}" title="TV" width="36">Television </i>
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" checked="" ng-model="dor.no_smk">
+           </label>
+            <i class="icon icon_custom"><img class="custom_icon" src="{{no_smk}}" title="No Smoking" width="36">No Smoking</i>
+        </li>
+        <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" ng-model="dor.fan">
+           </label>
+            
+           <i class="icon icon_custom"><img class="custom_icon" src="{{fan}}" title="Fan" width="36">Fan</i>
+        </li>
+         <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" ng-model="dor.air">
+           </label>
+            
+           <i class="icon icon_custom"><img class="custom_icon" src="{{air}}" title="Air Conditioner" width="32">Air Conditioner</i>
+
+        </li>
+                 <li class="item item-checkbox">
+           <label class="checkbox">
+             <input type="checkbox" value="true" ng-model="dor.wash">
+           </label>
+           
+           <i class="icon icon_custom"><img class="custom_icon" src="{{wash}}" title="Washing Machine" width="36">Washing Machine</i>
+
+
+        </li>
+      </ul>  -->
+</div>
+<div class="card">
+   <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">เบอร์โทรศัพท์</span>
+          <input type="text" placeholder="เบอร์โทรศัพท์" ng-model="dor.tel">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">อีเมล์</span>
+          <input type="text" placeholder="อีเมล์" ng-model="dor.mail">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">instagram</span>
+          <input type="text" placeholder="instagram" ng-model="dor.ig">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Facebook</span>
+          <input type="text" placeholder="Facebook" ng-model="dor.fb">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Line</span>
+          <input type="text" placeholder="Line" ng-model="dor.line">
+        </label>
+    </div>
+</div>
+<br> 
+  
+  </ion-content>
+</ion-view>

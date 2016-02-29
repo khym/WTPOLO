@@ -1,0 +1,34 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Create Account</h1>
+    <div class="buttons">
+      <button  id="button_modal_r" class="button button-clear" ng-click="closeSignUp()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+  <div class="card" ng-form="SignUpForm">
+    
+     <div class="list">
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email</span>
+    <input type="email" placeholder="Email" ng-model="user.email" required>
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="Password" placeholder="Password" ng-model="user.pwd" required>
+  </label>
+
+
+
+        <label class="item">
+          <button class="button button-block button-positive" ng-click="createuser(user)" ng-disabled="SignUpForm.$invalid">Sign Up</button>
+        </label>
+
+
+      </div>
+      </div>
+  
+  </ion-content>
+</ion-modal-view>

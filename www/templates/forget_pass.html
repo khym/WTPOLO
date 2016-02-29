@@ -1,0 +1,31 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Forget Password</h1>
+    <div class="buttons">
+      <button id="button_modal_r" class="button button-clear" ng-click="closeforget()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="card" ng-form="ForgetPass">
+     <div class="list">
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email</span>
+    <input type="text" placeholder="Email" ng-model="user.email" required>
+  </label>
+
+
+
+        <label class="item">
+          <button class="button button-block button-positive" ng-click="sendmail_forget(user.email)" ng-disabled="ForgetPass.$invalid" >Recovery Password</button>
+
+        </label>
+
+
+      </div>
+    </div>
+    <!-- <label class="item">
+    <button class="button button-block button-positive" ng-click="check_email_forget(user.email)">check mail</button>
+    </label> -->
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,52 @@
+<ion-view view-title="Management">
+<ion-nav-buttons side="right">
+        <!-- <button class="button button-icon button-clear " ng-click="search()" ><i id="button_right_tab" class="big-icon ion-ios-personadd"></i> </button> -->
+</ion-nav-buttons>
+
+
+<!--    <nav  mfb-menu position="br"  effect="slidein" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>  -->
+
+   <nav  mfb-menu position="br"  effect="slidein" active-icon="ion-plus-round" resting-icon="ion-plus-round" ng-click="add_dor()">
+      <!-- <a mfb-button icon="ion-paper-airplane" label="a link" ></a> -->
+    </nav>  
+    
+  <ion-content class="padding">
+
+
+
+<!-- 
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list> -->
+    <div class="card">
+    <div class="list">
+      <div class="item item-thumbnail-left item-text-wrap item-button-right" href="#" ng-repeat='dor_res in json_res'  ng-click="showActionsheet()">
+          <img ng-src="http://{{url_domain}}/{{dor_res.dor_imgurl1}}" tyle="max-width: 100%; height: auto; ">
+
+          <h2 ng-click="click(dor_res.dor_id)" >{{dor_res.dor_name}}</h2>
+          <p>ราคาหอพัก {{dor_res.dor_prize}} บาท/เดือน</p>
+          <!-- <button class="button button-icon icon ion-android-delete" ng-click="remove_booking(dor_res.dor_id)"></button> -->
+        </div>
+    
+        <!-- <div class="item item-thumbnail-left item-button-right" ng-click="showActionsheet()">
+          <img src="http://lorempixel.com/400/400/city/1">
+          <h2>Weezer</h2>
+          <p>Blue Album</p>
+          <button class="button button-icon icon ion-android-more-vertical" ng-click="popover.show($event)"></button>
+        </div> -->
+
+      </div>
+      </div>
+  </ion-content>
+</ion-view>

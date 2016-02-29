@@ -1,0 +1,98 @@
+<ion-modal-view >
+  <ion-header-bar>
+    <h1 class="title title-center">Facility Description</h1>
+    <div class="buttons">
+      <button id="button_modal_r" class="button button-clear" ng-click="close_Fac_descript()" >Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="padding">
+      <div class="list" ng-repeat="data in json_res">
+
+        <div class="item ng-binding" ng-show="data.fac_pet">
+          Not Allow Pet
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/no_pet.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_wifi">
+          Wifi Network
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/wifi.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_tv">
+          TV
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/tv.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_sm">
+          No Smoking
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/no_smoking.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_fan">
+          Fan
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/fan.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_air">
+          Air Conditioner
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/air.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_wash">
+          Washing Machine
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/washing_machine.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_cctv">
+          CCTV
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/cctv.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_elevator">
+          Elevator
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/elevator.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_fitness">
+          Fitness 
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/gym.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_keycard">
+          Key Card System
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/keycard.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_wirenet">
+          Wire Network
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/lan.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_security">
+          Security
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/security.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_shower">
+          Shower
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/shower.png">
+        </div>
+
+        <div class="item ng-binding" ng-show="data.fac_swimming">
+          Swimming Pool
+          <img class="item-checkbox-img" src="http://{{url_domain}}/pic/swim_pool.png">
+        </div>
+
+
+
+ <!--        <div class="item" ng-repeat="item in devList" >
+          {{ item.text }}
+          <img class="item-checkbox-img"
+              src="{{item.img}}">
+        </div> -->
+
+      </div>
+    </form>
+
+  </ion-content>
+</ion-modal-view>

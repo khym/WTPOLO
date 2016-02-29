@@ -1,0 +1,300 @@
+
+<ion-scroll >
+      <ion-view hide-nav-bar="true" view-title="Profile">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+
+ <!--      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios-arrow-back" ng-click="myGoBack() " >
+
+        </button>
+
+ 
+
+</ion-nav-buttons> -->
+
+<!--    <nav  mfb-menu position="br"  effect="slidein" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" ng-repeat="pos in positions">
+      <a mfb-button icon="{{button.icon}}" label="{{button.label}}" ng-repeat="button in buttons"></a>
+    </nav>   -->
+
+
+
+  <ion-content class="">
+
+
+<div class="title title-left header-item tool_bar_profile">
+<button class="button icon-left ion-chevron-left button-clear" ng-click="myGoBack()">Back</button>
+</div>
+
+
+
+
+ <!--  <div class="card"> -->
+<ion-list ng-repeat="data in json_res">
+
+<div id="slide_image">
+  <ion-slide-box>
+    <ion-slide >
+      <img class="img_slide" ng-src="{{data.dor_imgurl1}}" style="max-width: 100%; height: auto; " />
+    </ion-slide>
+    <ion-slide >
+      <img class="img_slide" ng-src="{{data.dor_imgurl2}}"  style="max-width: 100%; height: auto; "/>
+    </ion-slide>
+    <ion-slide >
+      <img class="img_slide" ng-src="{{data.dor_imgurl3}}"  style="max-width: 100%; height: auto; "/>
+    </ion-slide>
+  </ion-slide-box>
+   <div id="item-profile" class="item item-text-wrap item-button-right" href="#" >
+    <!--   <i class="icon ion-home"></i> -->
+      <h2>{{data.dor_name}}</h2>          
+
+      <div class="buttons">
+
+          {{data.dor_type_name}}          </div>
+      <p> <i class="icon ion-ios-location"> </i> {{data.name_place.results[1].formatted_address}}</p>
+      <!-- <span class="item-note">{{data.dor_type_name}}</span> -->
+    </div>
+
+
+ <div id="item-profile">
+<div id="item-3rd-icon" class="row item item-text-wrap" href="#" >
+<div class="col col-33 " ><i class="icon custom_img1 " ng-click="addBooking(data.dor_id,name_bk)">
+
+<img id="icon-00-height" class="gray" ng-src="http://{{url_domain}}/pic/Booking-96.png" ng-show="checked_booking(data.dor_id)">
+<img id="icon-00-height" ng-src="http://{{url_domain}}/pic/Booking-96.png" ng-hide="checked_booking(data.dor_id)">
+
+</i></div>
+
+<div class="col col-33 " ><i class="icon custom_img1 " ng-click="GoRoute(data.lat,data.lng)">
+<img id="icon-00-height" ng-src="http://{{url_domain}}/pic/Route-96.png" ></i></div>
+
+<div class="col col-33 " ng-click="show_fav=!show_fav">
+
+<!-- <i class="icon custom_img1 " ng-click="addFavorite(data.dor_id)"> -->
+<!-- <img id="icon-00-height" ng-src="{{img_fav}}" ></i> -->
+
+<i class="icon custom_img1" ng-click="addFavorite(data.dor_id,name_fav)"> 
+<img id="icon-00-height" ng-src="{{img_none}}" ng-show="checked_fav(data.dor_id)"> 
+<img id="icon-00-height" ng-src="{{img_active}}" ng-hide="checked_fav(data.dor_id)">
+</i>
+
+
+</div>
+</div>
+<div id="name-item-3rd-icon" class="row item item-text-wrap" href="#" >
+<div class="col col-33">
+<div ng-hide=!isActive>จองหอพัก</div>
+<div ng-show=!isActive>ยกเลิกจองหอพัก</div>
+</div>
+<div class="col col-33 ">นำทาง</div>
+<div class="col col-33 ">บันทึกหอพัก</div>
+</div></div>
+
+<!--  <div id="item-profile" class="item item-text-wrap" href="#" >
+<div class="row container-side-menu">
+        <div class="col col-33">
+          <button class="button button-icon">
+            <i class="icon ion-eye"></i> preview
+    </button></div>
+    <div class="col col-33">
+          <button class="button button-icon">
+            <i class="icon ion-crop"></i> crop
+          </button></div>
+  <div class="col col-33">
+          <button class="button button-icon">
+            <i class="icon ion-android-options"></i> styles
+          </button></div>
+          
+</div>
+
+</div> -->
+
+
+<!-- <div id="item-3rd-icon" class="item item-text-wrap" href="#" >
+<div class="tabs tabs-icon-top">
+  <a class="tab-item">
+    <i class="icon ion-home"></i>
+    จองหอพัก
+  </a>
+  <a class="tab-item">
+    <i class="icon ion-star"></i>
+    นำทาง
+  </a>
+  <a class="tab-item">
+    <i class="icon ion-gear-a"></i>
+    บันทึกหอพัก
+  </a>
+</div>
+</div> -->
+
+</div>
+
+ <div class="card">  
+
+
+
+
+        <div class="item item-divider">
+          รายละเอียดหอพัก
+        </div>
+
+
+ 
+        <a class="item item-icon-left item-button-right" href="#">
+<i class="icon ion-cash balanced">
+<!--   <img id="icon-left-profile" src="https://maxcdn.icons8.com/Color/PNG/96/Business/money_transfer-96.png"> -->
+
+</i>
+          ราคาหอพัก
+          <p>ค่ามัดจำ 2000 บาท</p>
+          <div class="buttons">
+          {{data.dor_prize}} บาท/เดือน          </div>
+
+        </a>
+
+        <a class="item item-icon-left item-button-right" href="#">
+        <i class="icon ion-flash energized"></i>
+          ค่าไฟฟ้า
+          <div class="buttons">
+          {{data.dor_e_prize}} บาท/ยูนิต          </div>
+
+        </a>
+
+        <a class="item item-icon-left item-button-right" href="#">
+        <i class="icon ion-waterdrop calm"></i>
+          ค่าน้ำ
+          <div class="buttons">
+          {{data.dor_w_prize}} บาท/ยูนิต          </div>
+
+        </a>
+
+        <a class="item item-icon-left" href="#">
+        <i class="icon "><img id="icon-70-height" ng-src="http://{{url_domain}}/pic/Door Opened-96.png" ></i>
+          {{data.booking_status}}
+          <span class="item-note">สามารจองห้องพักได้</span>
+        </a>
+
+
+<!-- 
+        <a class="item item-icon-left" href="#">
+        <i class="icon "></i>
+          Snickers
+        </a>
+
+
+        <a class="item item-icon-left" href="#">
+        <i class="icon "> <img id="icon-70-height" src="http://{{url_domain}}/pic/No Animals-96.png" ></i>
+          Twix
+        </a> -->
+</div>
+
+ <div class="card"> 
+        <div class="item item-divider">
+          สิ่งอำนวยความสะดวก
+        </div>
+
+        <a id="padLR_8px" class="item item-text-wrap" ng-click="fac_descript()">
+          <li ng-show="data.fac_pet" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/No Animals.png" ></li>
+          <li ng-show="data.fac_wifi" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Wi-Fi Logo.png" ></li>
+          <li ng-show="data.fac_tv" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/TV.png" ></li>
+          <li ng-show="data.fac_sm" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/No Smoking.png" ></li>
+          <li ng-show="data.fac_fan" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Fan.png" ></li>
+          <li ng-show="data.fac_air" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Air Conditioner.png" ></li>
+          <li ng-show="data.fac_wash" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Washing Machine.png" ></li>
+          <li ng-show="data.fac_cctv" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Wall Mount Camera.png" ></li>
+          <li ng-show="data.fac_elevator" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Elevator.png" ></li>
+          <li ng-show="data.fac_fitness" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Barbell-96.png" ></li>
+          <li ng-show="data.fac_keycard" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Card in Use.png" ></li>
+          <li ng-show="data.fac_wirenet" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Wired Network.png" ></li>
+          <li ng-show="data.fac_security" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Police.png" ></li>
+          <li ng-show="data.fac_shower" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Shower.png" ></li>
+          <li ng-show="data.fac_swimming" class="icon"><img id="icon-00-height" ng-src="http://{{url_domain}}/pic/96/Swimming.png" ></li>
+        </a>
+
+<!--         <a class="item" href="#">
+          LifeSavers
+        </a> -->
+        <div ng-show="data.fac_etc"class="item item-text-wrap ng-binding">
+อื่นๆ : {{data.fac_etc}}
+  </div>
+
+
+<!--         <a class="item" href="#">
+          Skittles
+        </a>
+
+        <a class="item" href="#">
+          Gobstoppers
+        </a> -->
+</div>
+
+ <div class="card"> 
+        <div class="item item-divider">
+          ข้อมูลติดต่อ
+        </div>
+
+                <a class="item item-icon-left" href="#">
+                <i class="icon ion-android-call calm"></i>
+       <!--  <i id="left_5" class="icon ">
+        <img id="icon-85-height" src="http://{{url_domain}}/pic/Phone-96.png" >
+        </i> -->
+          {{data.dor_tel}}
+        </a>
+
+
+        <a class="item item-icon-left" href="#">
+        <i class="icon ion-ios-email-outline "></i>
+        <!-- <i id="left_5" class="icon "><img id="icon-85-height" src="http://{{url_domain}}/pic/Post Office-96.png" ></i> -->
+          {{data.dor_mail}}
+        </a>
+
+         <a class="item item-icon-left" href="#">
+        <i id="left_3" class="icon "><img id="icon-95-height" ng-src="http://{{url_domain}}/pic/LINE_icon02.png" ></i>
+          {{data.dor_line}}
+        </a>
+
+
+         <a class="item item-icon-left" href="#">
+        <i id="left_5" class="icon "><img id="icon-85-height" ng-src="http://{{url_domain}}/pic/Facebook-96.png" ></i>
+          {{data.dor_fb}}
+        </a>
+
+        
+         <a class="item item-icon-left" href="#">
+        <i id="left_5" class="icon "><img id="icon-85-height" ng-src="http://{{url_domain}}/pic/Instagram-96.png" ></i>
+          {{data.dor_insta}}
+        </a>
+
+
+<!--         <a class="item item-icon-left" href="#">
+          Jolly Rancher
+        </a> -->
+
+<!--         <a class="item" href="#">
+          LifeSavers
+        </a>
+
+        <a class="item" href="#">
+          Skittles
+        </a>
+
+        <a class="item" href="#">
+          Gobstoppers
+        </a> -->
+</div>
+
+
+
+    </ion-list>
+
+<!--   </div> --> 
+
+<!--       <ion-infinite-scroll
+  
+    distance="30%">
+  </ion-infinite-scroll> -->
+
+        </ion-content>
+
+      </ion-view>
+      </ion-scroll>
