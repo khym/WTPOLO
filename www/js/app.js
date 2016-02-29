@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','starter.services','ngCordova', 'ngMap','rzModule','ng-mfb'])
 
-.run(function($ionicPlatform,$cordovaStatusbar,$rootScope) {
+.run(function($ionicPlatform,$cordovaStatusbar,$rootScope,$localstorage) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -28,6 +28,8 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.services','ng
 
     } 
 
+     var x_favorite = $localstorage.getObject('Favorite');
+     console.log("x_favorite",x_favorite);
 
      $rootScope.GlobalShowTab = function() {
       $rootScope.G_uid =  window.localStorage['uid'];

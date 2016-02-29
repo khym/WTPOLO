@@ -313,7 +313,7 @@ $scope.click = function(res,id) {
   $scope.user_id = $localstorage.getObject('uid');
 
   // window.localStorage.removeItem('Favorite');
-  $localstorage.setObject('Favorite', ['14']);
+  // $localstorage.setObject('Favorite', ['14']);
 
  // console.log("getttt",window.localStorage.getItem('Favorite'));
 
