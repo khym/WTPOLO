@@ -734,14 +734,23 @@ $scope.url_domain = MyDomain.get();
   $scope.pk = "https://maxcdn.icons8.com/Android_L/PNG/36/Household/garage-36.png";
 
 
-  $scope.devList = [
-    { text: "Not allow pet", checked: true, img: "https://maxcdn.icons8.com/Android_L/PNG/36/City/no_animals-36.png"},
-    { text: "Free Wifi", checked: false, img: "https://maxcdn.icons8.com/Android_L/PNG/36/Network/WiFi_logo-36.png" },
-    { text: "TV", checked: false, img: "https://maxcdn.icons8.com/Android_L/PNG/36/Household/tv-36.png" },
-    { text: "No Smoking", checked: false, img: "https://maxcdn.icons8.com/Android_L/PNG/36/City/no_smoking-36.png" },
-    { text: "Fan", checked: false, img: "https://maxcdn.icons8.com/Android_L/PNG/36/Household/fan-36.png" },
-    { text: "Air Conditioner", checked: false, img: "https://maxcdn.icons8.com/windows8/PNG/32/Household/air_conditioner-32.png" },
-    { text: "Washing Machine", checked: false, img: "https://maxcdn.icons8.com/Android_L/PNG/36/Household/garage-36.png" }
+$scope.devList = [
+    { text: "Not Allow Pet", checked: false, img: "http://"+$scope.url_domain+"/pic/no_pet.png"},
+    { text: "Wifi Network", checked: false, img: "http://"+$scope.url_domain+"/pic/wifi.png" },
+    { text: "TV", checked: false, img: "http://"+$scope.url_domain+"/pic/tv.png" },
+    { text: "No Smoking", checked: false, img: "http://"+$scope.url_domain+"/pic/no_smoking.png" },
+    { text: "Fan", checked: false, img: "http://"+$scope.url_domain+"/pic/fan.png" },
+    { text: "Air Conditioner", checked: false, img: "http://"+$scope.url_domain+"/pic/air.png" },
+    { text: "Washing Machine", checked: false, img: "http://"+$scope.url_domain+"/pic/washing_machine.png" },
+    { text: "CCTV", checked: false, img: "http://"+$scope.url_domain+"/pic/cctv.png" },
+    { text: "Elevator", checked: false, img: "http://"+$scope.url_domain+"/pic/elevator.png" },
+    { text: "Fitness ", checked: false, img: "http://"+$scope.url_domain+"/pic/gym.png" },
+    { text: "Key Card System", checked: false, img: "http://"+$scope.url_domain+"/pic/keycard.png" },
+    { text: "Wire Network", checked: false, img: "http://"+$scope.url_domain+"/pic/lan.png" },
+    { text: "Security", checked: false, img: "http://"+$scope.url_domain+"/pic/security.png" },
+    { text: "Shower", checked: false, img: "http://"+$scope.url_domain+"/pic/shower.png" },
+    { text: "Swimming Pool", checked: false, img: "http://"+$scope.url_domain+"/pic/swim_pool.png" }
+    // { text: "Security", checked: false, img: "http://"+$scope.url_domain+"/pic/security.png" },
   ];
 
 
