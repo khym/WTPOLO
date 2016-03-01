@@ -116,7 +116,7 @@ $ionicModal.fromTemplateUrl('templates/custom_search.html', {
       $scope.value_hide = !$scope.value_hide;
 
          // $http.get("http://localhost/angular_testjson/php_getjson.php?text="+test+"")
-         $http.get("http://"+$scope.url_domain+"/angular_testjson/php_getjson.php?text="+test+"")
+         $http.get("http://"+$scope.url_domain+"/service_findo/php_getjson.php?text="+test+"")
 
          //$http.get("https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+$scope.greeting+"&key=AIzaSyAL5HaZjZhmO9UgU4mi0xqEzxiy8BFlCqw")
       .success(function (response,status, headers, config) {
@@ -247,7 +247,7 @@ $scope.byRange = function (fieldName, minValue, maxValue ) {
 
          $scope.doRefresh = function() {
           window.location.reload(true)
-    // $http.get("http://192.168.1.35/angularjs/get_data.php")
+    // $http.get("http://192.168.1.35/service_findo/get_data.php")
     //  .success(function(response,status, headers, config) {
     //    $scope.json_res = response;
     //  })
@@ -258,7 +258,7 @@ $scope.byRange = function (fieldName, minValue, maxValue ) {
   };
 
 
-           $http.get("http://"+$scope.url_domain+"/angularjs/get_data.php")
+           $http.get("http://"+$scope.url_domain+"/service_findo/get_data.php")
     .success(function (response,status, headers, config) {
         $scope.json_res = response;
         
@@ -371,7 +371,7 @@ if(uid==0){
                     };
                     // console.log("datas",datas);
 
-$http.post("http://"+$scope.url_domain+"/angularjs/favor.php", datas).success(function(data,status,headers,config){
+$http.post("http://"+$scope.url_domain+"/service_findo/favor.php", datas).success(function(data,status,headers,config){
       console.log("data insert success");
     });
 
@@ -382,7 +382,7 @@ $http.post("http://"+$scope.url_domain+"/angularjs/favor.php", datas).success(fu
                       dorid :  $scope.dor_id
                     };
 
-  $http.post("http://"+$scope.url_domain+"/angularjs/booking.php", datas).success(function(data,status,headers,config){
+  $http.post("http://"+$scope.url_domain+"/service_findo/booking.php", datas).success(function(data,status,headers,config){
       console.log("data insert success");
     });
 
@@ -678,7 +678,7 @@ $scope.fac_descript_modal = modal;
   
 
 
-   $http.get("http://"+$scope.url_domain+"/angularjs/get_data_byid.php?text="+$scope.dor_id+"")
+   $http.get("http://"+$scope.url_domain+"/service_findo/get_data_byid.php?text="+$scope.dor_id+"")
     .success(function (response,status, headers, config) {
         // $scope.json_first = response;
         
@@ -898,7 +898,7 @@ console.log(res.pet,res.wifi,res.tv,res.no_smk,res.fan,res.air,res.wash)
 // console.log("no_sus "+res.not_allow+" wifi "+res.wifi+" tv "+res.tv+" no_smk "+res.no_smk+" fan "+res.fan+" air "+res.air+" wash "+res.wash);
 
 
-    $http.post("http://"+$scope.url_domain+"/angularjs/insert_dorV2.php", res ).success(function(data,status,headers,config){
+    $http.post("http://"+$scope.url_domain+"/service_findo/insert_dorV2.php", res ).success(function(data,status,headers,config){
           console.log("data insert success");
 
         });
@@ -1041,7 +1041,7 @@ initialize();
 
 }
 
-       $http.get("http://"+$scope.url_domain+"/angularjs/get_data_dor_byuserid.php?uid="+$scope.uid+"")
+       $http.get("http://"+$scope.url_domain+"/service_findo/get_data_dor_byuserid.php?uid="+$scope.uid+"")
     .success(function (response,status, headers, config) {
         $scope.json_res = response;
         console.log($scope.json_res);
@@ -1172,7 +1172,7 @@ if($scope.check_login()){
   $scope.name_fav = "Favorite_form_db";
   $scope.name_bk = "Booking_form_db";
 
-          $http.get("http://"+$scope.url_domain+"/angularjs/get_favor_byid.php?text="+$scope.user_id)
+          $http.get("http://"+$scope.url_domain+"/service_findo/get_favor_byid.php?text="+$scope.user_id)
     .success(function (data,status, headers, config) {
                 $scope.json_res1 = data;
                 $scope.array_fav = [];
@@ -1190,7 +1190,7 @@ if($scope.check_login()){
 
     });
 
- $http.get("http://"+$scope.url_domain+"/angularjs/get_booking_byid.php?text="+$scope.user_id)
+ $http.get("http://"+$scope.url_domain+"/service_findo/get_booking_byid.php?text="+$scope.user_id)
     .success(function (response,status, headers, config) {
           $scope.json_res2 = response;
           // console.log( $scope.json_res2);
@@ -1278,8 +1278,8 @@ angular.forEach(datas_fav, function(value, key) {
 
 $scope.getData = function(){
 $scope.url_domain = MyDomain.get();
-// "http://"+$scope.url_domain+"/angularjs/get_data_byid.php?text=all"
-           $http.get("http://"+$scope.url_domain+"/angularjs/get_data_byid.php?text=all")
+// "http://"+$scope.url_domain+"/service_findo/get_data_byid.php?text=all"
+           $http.get("http://"+$scope.url_domain+"/service_findo/get_data_byid.php?text=all")
     .success(function (response,status, headers, config) {
         $scope.json_res = response;
         $scope.json_new = $scope.whatthefilter($scope.json_res);
@@ -1287,7 +1287,7 @@ $scope.url_domain = MyDomain.get();
         if($check_login_service.get_status()){
           // console.log("dasddd");
           // http://localhost
-    //       $http.get("http://"+$scope.url_domain+"/angularjs/get_favor_byid.php?text="+$scope.user_id+"")
+    //       $http.get("http://"+$scope.url_domain+"/service_findo/get_favor_byid.php?text="+$scope.user_id+"")
     // .success(function (data,status, headers, config) {
     //             $scope.json_data = data;
     //         $scope.array_fav = [];
@@ -1503,11 +1503,11 @@ $scope.value_status = $check_login_service.get_status();
  $scope.createuser = function(user) {
     console.log(" createuser "+user.email+" , "+user.pwd);
 
-    // $http.post("http://localhost/angularjs/insert.php", user ).success(function(data,status,headers,config){
+    // $http.post("http://localhost/service_findo/insert.php", user ).success(function(data,status,headers,config){
     //       console.log("data insert success");
     //     });
 
-    $http.post("http://"+$scope.url_domain+"/angularjs/insert.php", user ).success(function(data,status,headers,config){
+    $http.post("http://"+$scope.url_domain+"/service_findo/insert.php", user ).success(function(data,status,headers,config){
           console.log("data insert success");
         });
 
@@ -1532,7 +1532,7 @@ $scope.value_status = $check_login_service.get_status();
     console.log(" email "+email);
     var x = "";
 
-    var y = $http.post("http://"+$scope.url_domain+"/angularjs/check_email.php", email ).success(function(data,status,headers,config){
+    var y = $http.post("http://"+$scope.url_domain+"/service_findo/check_email.php", email ).success(function(data,status,headers,config){
           // console.log(data);
           x = data;
           // console.log(" num row in post "+x);
@@ -1608,10 +1608,10 @@ $scope.value_status = $check_login_service.get_status();
 
          
 
-var link = "http://"+$scope.url_domain+"/angularjs/check_login.php";
+var link = "http://"+$scope.url_domain+"/service_findo/check_login.php";
     console.log(" login "+user.email+" , "+user.pwd,link);
 
-    // var link = 'http://localhost/angularjs/check_login.php';
+    // var link = 'http://localhost/service_findo/check_login.php';
 
         console.log("user",user);
 
